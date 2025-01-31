@@ -9,7 +9,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #E3F2FD;
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #283593;
             text-align: center;
             padding: 20px;
@@ -114,11 +118,7 @@
 <body>
     <h1>Upcoming Events</h1>
 
-    <!-- Add Event Button -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">
-        Add Event
-    </button>
-
+    
     <!-- Add Event Modal -->
     <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -153,7 +153,11 @@
                             <label for="eventSponsoredBy" class="form-label">Sponsored By</label>
                             <input type="text" class="form-control" id="eventSponsoredBy" name="sponsored_by" required>
                         </div>
-                        <button type="submit" class="btn btn-success">Add Event</button>
+                        <div class="mb-3">
+                            <label for="contact_details" class="form-label">Contact Details</label>
+                            <input type="text" class="form-control" id="contact_details" name="contact_details" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

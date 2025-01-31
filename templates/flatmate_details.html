@@ -43,6 +43,8 @@
         <p><strong>Occupancy Needed:</strong> {{ flatmate.occupancy_needed }}</p>
         <p><strong>Area:</strong> {{ flatmate.area }}</p>
         <p><strong>Facilities:</strong> {{ flatmate.facilities }}</p>
+        <p><strong>Gender:</strong> {{ flatmate.gender }}</p>
+        <p><strong>Contact Details:</strong> {{ flatmate.contact_details }}</p>
         <a href="{{ url_for('flatmates') }}" class="btn btn-primary">Back to Flatmates</a>
         <button class="btn btn-secondary" onclick="sendMessage()">Message for Inquiry</button>
     </div>

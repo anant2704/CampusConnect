@@ -7,8 +7,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #F1F8E9; /* Light Greenish Background */
-            color: #283593; /* Deep Blue Text */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #283593;
             text-align: center;
             padding: 20px;
             margin: 0;
@@ -78,7 +81,7 @@
         <p>Project Details: {{ hackathon.project_details }}</p>
         <p>Prize Pool: {{ hackathon.prize_pool }}</p>
         <p>Schedule Date: {{ hackathon.schedule }}</p>
-
+        
         <div class="btn-container">
             <button class="btn apply-btn" onclick="applyForHackathon()">Apply</button>
             <button class="btn community-btn" onclick="joinCommunity()">Join Community</button>

@@ -9,7 +9,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #F1F8E9;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #283593;
             text-align: center;
             padding: 20px;
@@ -45,10 +48,7 @@
 <body>
     <h1>Clubs</h1>
 
-    <!-- Add Club Button -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addClubModal">
-        Add Club
-    </button>
+    
 
     <!-- Add Club Modal -->
     <div class="modal fade" id="addClubModal" tabindex="-1" aria-labelledby="addClubModalLabel" aria-hidden="true">
@@ -59,28 +59,32 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="addClubForm">
+                    <form id="addClubForm" method="post" action="{{ url_for('add_club') }}">
                         <div class="mb-3">
                             <label for="clubName" class="form-label">Club Name</label>
-                            <input type="text" class="form-control" id="clubName" required>
+                            <input type="text" class="form-control" id="clubName" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="clubDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="clubDescription" rows="3" required></textarea>
+                            <textarea class="form-control" id="clubDescription" name="description" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="clubFeatures" class="form-label">Features</label>
-                            <textarea class="form-control" id="clubFeatures" rows="3" required></textarea>
+                            <textarea class="form-control" id="clubFeatures" name="features" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="clubWhyJoin" class="form-label">Why Join</label>
-                            <textarea class="form-control" id="clubWhyJoin" rows="3" required></textarea>
+                            <textarea class="form-control" id="clubWhyJoin" name="why_join" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="clubMembers" class="form-label">Members</label>
-                            <input type="number" class="form-control" id="clubMembers" required>
+                            <label for="clubMembers" class="form-label">Number of Members</label>
+                            <input type="number" class="form-control" id="clubMembers" name="members" required>
                         </div>
-                        <button type="submit" class="btn btn-success">Add Club</button>
+                        <div class="mb-3">
+                            <label for="clubContactDetails" class="form-label">Contact Details</label>
+                            <input type="text" class="form-control" id="clubContactDetails" name="contact_details" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>
@@ -100,13 +104,37 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Handle form submission
         document.getElementById('addClubForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Add your form submission logic here
+            event.preventDefault();  // Prevent default form submission
+
+            // Get form data
+            const clubName = document.getElementById('clubName').value;
+            const clubDescription = document.getElementById('clubDescription').value;
+            const clubFeatures = document.getElementById('clubFeatures').value;
+            const clubWhyJoin = document.getElementById('clubWhyJoin').value;
+            const clubMembers = document.getElementById('clubMembers').value;
+            const contactDetails = document.getElementById('clubContactDetails').value;
+
+            // Example: Output the form data in the console (You can replace this with an AJAX request to a backend)
+            console.log({
+                clubName,
+                clubDescription,
+                clubFeatures,
+                clubWhyJoin,
+                clubMembers,
+                contactDetails
+            });
+
+            // Show success alert (replace with your logic to save the club)
             alert('Club added successfully!');
+
             // Close the modal
-            var addClubModal = new bootstrap.Modal(document.getElementById('addClubModal'));
+            const addClubModal = new bootstrap.Modal(document.getElementById('addClubModal'));
             addClubModal.hide();
+
+            // Reset the form
+            document.getElementById('addClubForm').reset();
         });
     </script>
 </body>

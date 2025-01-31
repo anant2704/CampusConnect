@@ -42,6 +42,7 @@
         <p><strong>Description:</strong> {{ event.description }}</p>
         <p><strong>Link:</strong> <a href="{{ event.link }}" target="_blank">{{ event.link }}</a></p>
         <p><strong>Sponsored By:</strong> {{ event.sponsored_by }}</p>
+        <p><strong>Contact Details:</strong> {{ event.contact_details }}</p>
         <a href="{{ url_for('events') }}" class="btn btn-primary">Back to Events</a>
         <button class="btn btn-secondary" onclick="sendMessage()">Message for Inquiry</button>
     </div>

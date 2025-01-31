@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign Up</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,25 +46,33 @@
         button:hover {
             background-color: #45a049;
         }
-        p {
-            text-align: center;
-        }
     </style>
 </head>
 <body>
 
-    <h1>Login</h1>
+    <h1>Create an Account</h1>
     <div class="form-container">
-        <form action="/login" method="POST">
+        <form action="/signup" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" required>
 
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" required>
 
-            <button type="submit">Login</button>
+            <label for="user_type">User Type:</label>
+            <select id="user_type" name="user_type" required>
+                <option value="General">General User</option>
+                <option value="Admin">Admin</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
         </form>
-        <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></p>
     </div>
 
 </body>
