@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Platform</title>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #4B0082;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #343a40;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            width: 280px;
+            padding: 20px;
+            background: linear-gradient(135deg, #00bcd4, #03a9f4);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+        }
+
+        .card-alt {
+            background: linear-gradient(135deg, #9c27b0, #e91e63);
+        }
+
+        .card-warning {
+            background: linear-gradient(135deg, #ff5722, #ff9800);
+        }
+
+        .card-club {
+            background: linear-gradient(135deg, #2196f3, #3f51b5);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/hackathons">Hackathons</a>
+        <a href="/clubs">Clubs</a>
+        <a href="/flatmates">Find Flatmates</a>
+        <a href="/events">Events</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Welcome to the Community Platform</h1>
+
+        <!-- Cards for Navigation -->
+        <div class="card-container">
+            <div class="card" onclick="navigateTo('hackathons')">
+                <h2>Hackathons</h2>
+                <p>Join exciting hackathons and compete with the best minds.</p>
+            </div>
+            <div class="card card-alt" onclick="navigateTo('clubs')">
+                <h2>Clubs</h2>
+                <p>Find and join clubs that match your interests and hobbies.</p>
+            </div>
+            <div class="card card-warning" onclick="navigateTo('flatmates')">
+                <h2>Find Flatmates</h2>
+                <p>Looking for shared accommodation? Connect with flatmates here.</p>
+            </div>
+            <div class="card card-club" onclick="navigateTo('events')">
+                <h2>Events</h2>
+                <p>Stay updated with upcoming events and activities.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Community Platform. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = "/" + page;
+        }
+    </script>
+</body>
+</html>
